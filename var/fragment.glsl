@@ -2,6 +2,8 @@
 
 out vec4 fragmentColor;
 
+uniform sampler2DRect screen;
+
 void main() {
-    fragmentColor = vec4(0.0, 0.5, 0.0, 1.0);
+    fragmentColor = texture(screen, gl_FragCoord.xy);
 }
