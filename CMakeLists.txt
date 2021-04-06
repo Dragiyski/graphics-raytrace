@@ -19,7 +19,7 @@ message(STATUS "SDL2_LIBRARIES:   ${SDL2_LIBRARIES}")
 message(STATUS "OPENGL_INCLUDE_DIRS: ${OPENGL_INCLUDE_DIRS}")
 message(STATUS "OPENGL_LIBRARIES: ${OPENGL_LIBRARIES}")
 
-add_executable(${PROJECT_NAME} src/main.cpp src/Application.cpp src/gl/shader.cpp src/gl/program.cpp)
+add_executable(${PROJECT_NAME} src/main.cpp src/gl/shader.cpp src/gl/program.cpp src/Screen.cpp src/global.h src/global.cpp)
 
 add_dependencies(${PROJECT_NAME} SDL2::SDL2)
 
