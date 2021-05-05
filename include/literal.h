@@ -144,7 +144,7 @@ namespace literal {
     }
 
     template<typename T, T... chars>
-    constexpr string<chars...> operator "" _string() { return string<chars...>({}); }
+    constexpr string<chars...> operator ""_string() { return string<chars...>({}); }
 }
 
 #endif //CONST_STRING_LITERAL_H

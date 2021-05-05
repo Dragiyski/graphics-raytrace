@@ -9,6 +9,9 @@ uniform layout(rgba32f, binding = 0) image2DArray ray;
 uniform ivec2 screenSize;
 uniform vec2 viewSize;
 uniform float screenRadius;
+uniform vec3 cameraOrigin;
+uniform vec3 cameraDirection;
+uniform float cameraRoll;
 
 void main() {
     /* This part is dyanmic and depends on the current work group */
@@ -18,6 +21,6 @@ void main() {
     vec3 origin = vec3(0.0, 0.0, screenRadius);
     vec3 direction = normalize(flatCoord - origin);
 
-    imageStore(ray, ivec3(gl_WorkGroupID.xy, 0), vec4(origin, 1.0));
+    imageStore(ray, ivec3(gl_WorkGroupID.xy, 0), vec4(cameraOrigin, 1.0));
     imageStore(ray, ivec3(gl_WorkGroupID.xy, 1), vec4(direction, 1.0));
 }
